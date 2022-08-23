@@ -10,7 +10,7 @@ import * as Font from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback, useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
-import Login from "./src/screens/Login";
+import { Routes } from "./src/routes";
 import { Container } from "./src/styles/global";
 import Theme from "./src/styles/theme";
 
@@ -53,7 +53,7 @@ export default function App() {
   return (
     <ThemeProvider theme={Theme}>
       <Container onLayout={onLayoutRootView}>
-        <Login />
+        <Routes />
       </Container>
     </ThemeProvider>
   );
