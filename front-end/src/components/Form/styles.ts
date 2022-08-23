@@ -76,17 +76,27 @@ export const SubmitText = styled.Text`
 `;
 
 export const SignUp = styled.View`
-  margin-top: 30px;
+  margin-top: 20px;
 `;
 
 export const SignUpButton = styled.Pressable`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
 `;
 
 export const SignUpText = styled.Text`
+  font-family: ${(props) => props.theme.fonts.title600Italic};
+  font-size: 35px;
+  color: ${(props) => props.theme.colors.primary.text};
+`;
+
+export const BackButton = styled.Pressable`
+  align-items: center;
+  justify-content: center;
+`;
+
+export const BackText = styled.Text`
   font-family: ${(props) => props.theme.fonts.title600Italic};
   font-size: 35px;
   color: ${(props) => props.theme.colors.primary.text};

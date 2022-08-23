@@ -1,9 +1,11 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Controller, useForm } from "react-hook-form";
-import { IBodyAuth } from "shared/interfaces";
 import * as yup from "yup";
+import { IBodyAuth } from "../../shared/interfaces";
 import {
+  BackButton,
+  BackText,
   Error,
   ForgotPassword,
   ForgotPasswordButton,
@@ -25,6 +27,9 @@ interface FormProps {
   reset?: boolean;
   signup?: boolean;
   onSubmit: ({ email, password, name }: IBodyAuth) => void;
+  onPressSignUp?: () => void;
+  onPressBack?: () => void;
+  onPressForgotPassword?: () => void;
 }
 
 const validationLogin = yup.object({
@@ -98,6 +103,7 @@ const Form = (props: FormProps) => {
               onBlur={onBlur}
               onChangeText={onChange}
               value={value}
+              autoCapitalize="none"
             />
           )}
           name="email"
@@ -122,7 +128,7 @@ const Form = (props: FormProps) => {
 
         {props.login && (
           <ForgotPassword>
-            <ForgotPasswordButton onPress={onPress}>
+            <ForgotPasswordButton onPress={props.onPressForgotPassword}>
               <ForgotPasswordText>I forgot my password</ForgotPasswordText>
             </ForgotPasswordButton>
           </ForgotPassword>
@@ -155,22 +161,18 @@ const Form = (props: FormProps) => {
 
       <SignUp className="signup-btn">
         {props.login ? (
-          <SignUpButton onPress={onPress}>
+          <SignUpButton onPress={props.onPressSignUp}>
             <SignUpText>
               Sign Up <Ionicons name="arrow-forward" size={30} />
             </SignUpText>
           </SignUpButton>
         ) : (
-          <SignUpButton onPress={onPress}>
-            <SignUpText>
-              <Ionicons
-                name="arrow-back"
-                style={{ marginRight: "20px" }}
-                size={30}
-              />
+          <BackButton onPress={props.onPressBack}>
+            <BackText>
+              <Ionicons name="arrow-back" size={30} />
               Back
-            </SignUpText>
-          </SignUpButton>
+            </BackText>
+          </BackButton>
         )}
       </SignUp>
     </FormMain>
