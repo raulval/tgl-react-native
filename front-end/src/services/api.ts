@@ -13,7 +13,9 @@ export default api;
 
 api.interceptors.request.use(
   async (config) => {
-    const token = await AsyncStorage.getItem("userToken");
+    const token =
+      (await AsyncStorage.getItem("userToken")) !== null &&
+      (await AsyncStorage.getItem("userToken"));
 
     if (token) {
       config.headers!.Authorization = `Bearer ${token}`;

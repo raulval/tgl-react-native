@@ -1,10 +1,10 @@
-import api from "../../services/api";
 import {
   IBodyAuth,
   IBodyEditUserInfo,
   IResetResponse,
   ISignUpResponse,
-} from "../../shared/interfaces";
+} from "shared/interfaces";
+import api from "../../services/api";
 import { IUser } from "./interfaces";
 
 const user = (): IUser => {

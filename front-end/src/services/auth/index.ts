@@ -15,10 +15,12 @@ const auth = (): IAuth => {
   const reset = async (body: IBodyAuth): Promise<IResetResponse> => {
     return api.post("reset", body);
   };
-  const resetToken = AsyncStorage.getItem("resetToken");
   const changePassword = async (
     body: IBodyAuth
   ): Promise<IChangePasswordResponse> => {
+    const resetToken =
+      (await AsyncStorage.getItem("resetToken")) !== null &&
+      (await AsyncStorage.getItem("resetToken"));
     return api.post(`reset/${resetToken}`, body);
   };
 

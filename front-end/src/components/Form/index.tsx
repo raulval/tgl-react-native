@@ -1,8 +1,8 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Controller, useForm } from "react-hook-form";
+import { IBodyAuth } from "shared/interfaces";
 import * as yup from "yup";
-import { IBodyAuth } from "../../shared/interfaces";
 import {
   BackButton,
   BackText,
