@@ -48,7 +48,7 @@ export const ForgotPassword = styled.View`
   align-items: flex-end;
 `;
 
-export const ForgotPasswordButton = styled.Pressable``;
+export const ForgotPasswordButton = styled.TouchableOpacity``;
 
 export const ForgotPasswordText = styled.Text`
   font-family: ${(props) => props.theme.fonts.text400Italic};
@@ -64,7 +64,7 @@ export const Submit = styled.View`
   justify-content: center;
 `;
 
-export const SubmitButton = styled.Pressable`
+export const SubmitButton = styled.TouchableOpacity`
   border: none;
   transition: all 0.2s;
 `;
@@ -79,7 +79,7 @@ export const SignUp = styled.View`
   margin-top: 20px;
 `;
 
-export const SignUpButton = styled.Pressable`
+export const SignUpButton = styled.TouchableOpacity`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,7 +91,7 @@ export const SignUpText = styled.Text`
   color: ${(props) => props.theme.colors.primary.text};
 `;
 
-export const BackButton = styled.Pressable`
+export const BackButton = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
 `;

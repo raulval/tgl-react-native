@@ -4,12 +4,15 @@ import Form from "components/Form";
 import Slogan from "components/Slogan";
 import { useState } from "react";
 import { ActivityIndicator, Alert, ScrollView, View } from "react-native";
+import { useDispatch } from "react-redux";
 import { auth } from "services/index";
 import { IBodyAuth, Nav } from "shared/interfaces";
+import { setUser } from "store/userSlice";
 import { LoginContainer } from "./styles";
 
 const Login = () => {
   const { navigate } = useNavigation<Nav>();
+  const dispatch = useDispatch();
   const { login } = auth();
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -17,12 +20,16 @@ const Login = () => {
     try {
       setLoading(true);
       const response = await login({ email, password });
-      // dispatch(getUser(response.data));
-      console.log(response.data);
+      dispatch(setUser(response.data));
       await AsyncStorage.setItem("userToken", response.data.token.token);
       navigate("Home");
     } catch (error: any) {
-      Alert.alert(error.response.data.message);
+      if (error.response.data.message) {
+        Alert.alert(error.response.data.message);
+      } else {
+        Alert.alert("Something went wrong");
+        navigate("Login");
+      }
     } finally {
       setLoading(false);
     }
