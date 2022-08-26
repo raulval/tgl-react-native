@@ -22,7 +22,7 @@ const Login = () => {
       const response = await login({ email, password });
       dispatch(setUser(response.data));
       await AsyncStorage.setItem("userToken", response.data.token.token);
-      navigate("Home");
+      navigate("AppBets");
     } catch (error: any) {
       if (error.response.data.message) {
         Alert.alert(error.response.data.message);

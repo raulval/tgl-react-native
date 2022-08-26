@@ -47,7 +47,7 @@ const Home = () => {
         dispatch(getGames(res.data));
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.response);
       });
   }, []);
 
@@ -57,7 +57,7 @@ const Home = () => {
         setBets(res.data);
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.response.data);
       });
   }, [selectedGame]);
 

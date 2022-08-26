@@ -20,3 +20,7 @@ export type { IBodyEditUserInfo, ISignUpResponse } from "./UserInterfaces";
 export type Nav = {
   navigate: (value: string) => void;
 };
+
+export type NavReset = {
+  reset: (value: { routes: [{ name: string }] }) => void;
+};
