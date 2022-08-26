@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation } from "@react-navigation/native";
+import Account from "screens/Account";
 import Home from "screens/Home";
 import Login from "screens/Login";
 import NewPassword from "screens/NewPassword";
@@ -36,13 +37,20 @@ export function AppBets() {
         name="Home"
         component={Home}
         options={{
-          drawerIcon: () => <Ionicons name="home" size={24} color="white" />,
+          drawerIcon: () => <Ionicons name="home" size={26} />,
+        }}
+      />
+      <Drawer.Screen
+        name="Profile"
+        component={Account}
+        options={{
+          drawerIcon: () => <Ionicons name="person" size={26} />,
         }}
       />
       <Drawer.Screen
         name="Logout"
         options={{
-          drawerIcon: () => <Ionicons name="log-out" size={30} />,
+          drawerIcon: () => <Ionicons name="log-out" size={28} />,
           headerShown: false,
         }}
       >
