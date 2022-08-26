@@ -41,7 +41,7 @@ export const FiltersContainer = styled.View`
 export const BetsPlayedContainer = styled.SafeAreaView`
   width: 100%;
   height: 65%;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 35px;
 `;
 

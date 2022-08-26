@@ -1,13 +1,15 @@
 import { useNavigation } from "@react-navigation/native";
+import AddButton from "components/AddButton";
 import Bets from "components/Bets";
 import GameButton from "components/GameButton";
 import { useEffect, useState } from "react";
-import { FlatList } from "react-native";
+import { FlatList, Text } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import gamesService from "services/games";
 import { bets as betsService } from "services/index";
 import { Game, IBets, Nav } from "shared/interfaces";
 import { getGames } from "store/gameSlice";
+import Theme from "styles/theme";
 import {
   BetsPlayedContainer,
   FiltersContainer,
@@ -67,9 +69,22 @@ const Home = () => {
     }
   };
 
+  const onPressAddBet = () => {
+    navigate("Bet");
+  };
+
   return (
     <HomeContainer>
-      {/* <NavBar home /> */}
+      <Text
+        style={{
+          fontSize: 32,
+          fontFamily: Theme.fonts.title600Italic,
+          color: Theme.colors.primary.main,
+          marginBottom: -50,
+        }}
+      >
+        TGL
+      </Text>
       <HomeHeader>
         <RecentGames>Recent Games</RecentGames>
         <FiltersText>Filters:</FiltersText>
@@ -102,6 +117,7 @@ const Home = () => {
         ) : (
           <NoBet>No bets yet, make one!</NoBet>
         )}
+        <AddButton onPress={onPressAddBet} />
       </BetsPlayedContainer>
     </HomeContainer>
   );
