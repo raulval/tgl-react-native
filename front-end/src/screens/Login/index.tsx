@@ -27,7 +27,7 @@ const Login = () => {
       if (error.response.data.message) {
         Alert.alert(error.response.data.message);
       } else {
-        Alert.alert("Something went wrong");
+        Alert.alert("Error", "Something went wrong");
         navigate("Login");
       }
     } finally {

@@ -57,7 +57,7 @@ const Home = () => {
         setBets(res.data);
       })
       .catch((err) => {
-        console.log(err.response.data);
+        console.error(err.response.data);
       });
   }, [selectedGame]);
 
@@ -107,7 +107,13 @@ const Home = () => {
           )}
         </FiltersContainer>
       </HomeHeader>
-      <BetsPlayedContainer>
+      <BetsPlayedContainer
+        style={
+          bets.length === 0 && {
+            alignItems: "center",
+          }
+        }
+      >
         {bets.length > 0 ? (
           <FlatList
             data={bets}

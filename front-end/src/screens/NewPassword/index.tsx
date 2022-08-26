@@ -55,7 +55,7 @@ const NewPassword = () => {
     try {
       setLoading(true);
       const response = await changePassword({ password, confirm_password });
-      Alert.alert("Password changed successfully");
+      Alert.alert("Success", "Password changed successfully");
       navigate("Login");
     } catch (error: any) {
       Alert.alert(error.response.data.message);
