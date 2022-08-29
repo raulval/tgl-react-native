@@ -70,7 +70,7 @@ const Home = () => {
   };
 
   const onPressAddBet = () => {
-    navigate("Bet");
+    navigate("New Bet");
   };
 
   return (

@@ -69,10 +69,6 @@ const Form = (props: FormProps) => {
     resolver: yupResolver(validation),
   });
 
-  const onPress = () => {
-    console.log("Clicou");
-  };
-
   return (
     <FormMain>
       {props.login && <FormTitle>Authentication</FormTitle>}
