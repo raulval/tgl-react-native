@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor, store } from "store/index";
-import { AppAuth, AppBets } from "./app.routes";
+import { AppAuth, AppCart } from "./app.routes";
 
 export function Routes() {
   const [isUser, setIsUser] = useState<boolean>(false);
@@ -20,7 +20,7 @@ export function Routes() {
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <NavigationContainer>
-            <AppBets />
+            <AppCart />
           </NavigationContainer>
         </PersistGate>
       </Provider>
