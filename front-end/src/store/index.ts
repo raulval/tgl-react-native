@@ -11,6 +11,7 @@ import {
   REHYDRATE,
 } from "redux-persist";
 import betsReducer from "./betSlice";
+import cartReducer from "./cartSlice";
 import gamesReducer from "./gameSlice";
 import userReducer from "./userSlice";
 
@@ -18,6 +19,7 @@ const reducers = combineReducers({
   user: userReducer,
   games: gamesReducer,
   bets: betsReducer,
+  cart: cartReducer,
 });
 
 const persistConfig = {
