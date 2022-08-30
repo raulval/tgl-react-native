@@ -53,8 +53,8 @@ const NewPassword = () => {
     confirm_password,
   }: IBodyAuth) => {
     try {
-      setLoading(true);
       const response = await changePassword({ password, confirm_password });
+      setLoading(true);
       Alert.alert("Success", "Password changed successfully");
       navigate("Login");
     } catch (error: any) {

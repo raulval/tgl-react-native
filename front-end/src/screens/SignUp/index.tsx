@@ -1,6 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import Form from "components/Form";
-import Slogan from "components/Slogan";
+import { Form, Slogan } from "components/index";
 import { useState } from "react";
 import { ActivityIndicator, Alert, ScrollView, View } from "react-native";
 import user from "services/user";
@@ -14,8 +13,8 @@ const SignUp = () => {
 
   const handleSubmit = async ({ name, email, password }: IBodyAuth) => {
     try {
-      setLoading(true);
       const response = await signup({ name, email, password });
+      setLoading(true);
       Alert.alert("Success", "User created successfully");
       navigate("Login");
     } catch (error: any) {

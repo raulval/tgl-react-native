@@ -1,7 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation } from "@react-navigation/native";
-import Form from "components/Form";
-import Slogan from "components/Slogan";
+import { Form, Slogan } from "components/index";
 import { useState } from "react";
 import { ActivityIndicator, Alert, ScrollView, View } from "react-native";
 import { useDispatch } from "react-redux";
@@ -18,8 +17,8 @@ const Login = () => {
 
   const handleSubmit = async ({ email, password }: IBodyAuth) => {
     try {
-      setLoading(true);
       const response = await login({ email, password });
+      setLoading(true);
       dispatch(setUser(response.data));
       await AsyncStorage.setItem("userToken", response.data.token.token);
       navigate("AppCart");
@@ -28,7 +27,6 @@ const Login = () => {
         Alert.alert(error.response.data.message);
       } else {
         Alert.alert("Error", "Something went wrong");
-        navigate("Login");
       }
     } finally {
       setLoading(false);

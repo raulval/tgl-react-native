@@ -3,8 +3,7 @@ import { IBodyAuth } from "shared/interfaces";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation } from "@react-navigation/native";
-import Form from "components/Form";
-import Slogan from "components/Slogan";
+import { Form, Slogan } from "components/index";
 import { useState } from "react";
 import { ActivityIndicator, Alert, View } from "react-native";
 import { Nav } from "shared/interfaces";
@@ -17,8 +16,8 @@ const Reset = () => {
 
   const handleSubmit = async ({ email }: IBodyAuth) => {
     try {
-      setLoading(true);
       const response = await reset({ email });
+      setLoading(true);
       await AsyncStorage.setItem("resetToken", response.data.token);
       navigate("NewPassword");
     } catch (error: any) {
