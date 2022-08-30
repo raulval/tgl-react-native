@@ -26,6 +26,7 @@ const Home = () => {
   const { listGames } = gamesService();
   const { listBets } = betsService();
   const { isLogged } = useSelector((state: any) => state.user);
+  const { cartData } = useSelector((state: any) => state.cart);
   const [bets, setBets] = useState<IBets[]>([]);
   const [games, setGames] = useState<Game[]>([]);
   const [selectedGame, setSelectedGame] = useState<string[]>([]);
@@ -59,7 +60,7 @@ const Home = () => {
       .catch((err) => {
         console.error(err.response.data);
       });
-  }, [selectedGame]);
+  }, [selectedGame, cartData]);
 
   const onClickGameButton = (game: Game) => {
     if (selectedGame.includes(game.type)) {

@@ -32,6 +32,7 @@ const Bet = () => {
   const navigation = useNavigation<any>();
   const dispatch = useDispatch();
   const { gamesData } = useSelector((state: any) => state.games);
+  const { cartData } = useSelector((state: any) => state.cart);
   const [selectedGame, setSelectedGame] = useState<Game>(gamesData.types[0]);
   const [selectedNumbers, setSelectedNumbers] = useState<number[]>([]);
   const [cartBets, setCartBets] = useState<ICartBets[]>([]);
@@ -96,7 +97,7 @@ const Bet = () => {
         price: selectedGame.price,
       };
       setCartBets([...cartBets, addToCartData]);
-      dispatch(setCart([...cartBets, addToCartData]));
+      dispatch(setCart([...cartData, addToCartData]));
       setSelectedNumbers([]);
       navigation?.getParent("cart").openDrawer();
     } else {

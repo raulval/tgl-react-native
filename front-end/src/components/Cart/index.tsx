@@ -26,39 +26,11 @@ const Cart = () => {
   const dispatch = useDispatch();
   const { cartData } = useSelector((state: any) => state.cart);
   const { newBet } = bets();
-  const [selectedBet, setSelectedBet] = useState<ICartBets | undefined>();
-  // const [cartBets, setCartBets] = useState<ICartBets[]>(cartData);
   const [loading, setLoading] = useState<boolean>(false);
-
-  console.log("CartData: ", cartData);
-
-  const onDeleteBet = (bet: ICartBets) => {
-    Alert.alert(
-      "Confirm delete",
-      `Do you want to delete ${
-        selectedBet?.type
-      } with the numbers ${selectedBet?.numbers.toString()}?`,
-      [
-        {
-          text: "Cancel",
-          style: "cancel",
-        },
-        {
-          text: "Delete",
-          onPress: () => {
-            dispatch(
-              setCart(cartData.filter((cart: any) => cart !== selectedBet))
-            );
-          },
-        },
-      ]
-    );
-    setSelectedBet(bet);
-  };
 
   const onClickSaveBets = async () => {
     const betData = {
-      games: cartData.map((bet: any) => {
+      games: cartData.map((bet: ICartBets) => {
         return {
           game_id: bet.game_id,
           numbers: bet.numbers,
@@ -85,6 +57,27 @@ const Cart = () => {
       </View>
     );
   }
+
+  const onDeleteBet = (bet: ICartBets) => {
+    Alert.alert(
+      "Confirm delete",
+      `Do you want to delete ${
+        bet?.type
+      } with the numbers ${bet?.numbers.toString()}?`,
+      [
+        {
+          text: "Cancel",
+          style: "cancel",
+        },
+        {
+          text: "Delete",
+          onPress: () => {
+            dispatch(setCart(cartData.filter((cart: any) => cart !== bet)));
+          },
+        },
+      ]
+    );
+  };
 
   return (
     <CartContainer>
