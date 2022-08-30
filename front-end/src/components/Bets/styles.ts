@@ -32,7 +32,7 @@ export const BetNumbers = styled.Text`
 
   /* overflow-wrap: break-word; */
 
-  width: 215px;
+  width: 230px;
 `;
 
 export const BetDateAndPrice: any = styled.Text`

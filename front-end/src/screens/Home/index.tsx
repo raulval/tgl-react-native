@@ -81,7 +81,8 @@ const Home = () => {
           fontSize: 32,
           fontFamily: Theme.fonts.title600Italic,
           color: Theme.colors.primary.main,
-          marginBottom: -50,
+          marginBottom: -65,
+          marginTop: 20,
         }}
       >
         TGL

@@ -16,7 +16,7 @@ const SignUp = () => {
     try {
       setLoading(true);
       const response = await signup({ name, email, password });
-      Alert.alert("User created successfully");
+      Alert.alert("Success", "User created successfully");
       navigate("Login");
     } catch (error: any) {
       if (error.response.data.message) {

@@ -35,7 +35,9 @@ export const FiltersText = styled.Text`
 export const FiltersContainer = styled.View`
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   margin-top: 10px;
+  flex-wrap: wrap;
 `;
 
 export const BetsPlayedContainer = styled.SafeAreaView`

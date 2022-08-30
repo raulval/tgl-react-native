@@ -13,7 +13,7 @@ const HeaderCartButton = () => {
       <CartButton onPress={() => navigation?.getParent("cart").openDrawer()}>
         <Ionicons name="cart-outline" size={26} />
         <CartItems>
-          {cartData.length > 0 ? cartCurrencyFormat(cartData) : "0,00"}
+          R$ {cartData.length > 0 ? cartCurrencyFormat(cartData) : "0,00"}
         </CartItems>
       </CartButton>
     </HeaderCartButtonContainer>

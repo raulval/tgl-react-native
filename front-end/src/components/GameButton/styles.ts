@@ -13,6 +13,7 @@ export const GamesButton = styled.Pressable<ColorProps>`
   border-radius: 100px;
   margin-left: 6px;
   justify-content: center;
+  margin-bottom: 8px;
 `;
 
 export const GameButtonText = styled.Text<ColorProps>`
