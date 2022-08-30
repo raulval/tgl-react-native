@@ -1,7 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import AddButton from "components/AddButton";
-import Bets from "components/Bets";
-import GameButton from "components/GameButton";
+import { AddButton, Bets, GameButton } from "components/index";
 import { useEffect, useState } from "react";
 import { FlatList, Text } from "react-native";
 import { useDispatch, useSelector } from "react-redux";

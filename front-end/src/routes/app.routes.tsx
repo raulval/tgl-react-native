@@ -5,15 +5,16 @@ import { useDispatch } from "react-redux";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation } from "@react-navigation/native";
-import Cart from "components/Cart";
-import HeaderCartButton from "components/HeaderCartButton";
-import Account from "screens/Account";
-import Bet from "screens/Bet";
-import Home from "screens/Home";
-import Login from "screens/Login";
-import NewPassword from "screens/NewPassword";
-import Reset from "screens/Reset";
-import SignUp from "screens/SignUp";
+import { Cart, HeaderCartButton } from "components/index";
+import {
+  Account,
+  Bet,
+  Home,
+  Login,
+  NewPassword,
+  Reset,
+  SignUp,
+} from "screens/index";
 import { NavReset } from "shared/interfaces";
 import { logoutCart } from "store/cartSlice";
 import { logout } from "store/userSlice";

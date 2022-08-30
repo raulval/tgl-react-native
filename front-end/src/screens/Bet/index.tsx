@@ -1,7 +1,6 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
-import BetNumbers from "components/BetNumbers";
-import GameButton from "components/GameButton";
+import { BetNumbers, GameButton } from "components/index";
 import { useState } from "react";
 import { Alert, ScrollView } from "react-native";
 import { useDispatch, useSelector } from "react-redux";

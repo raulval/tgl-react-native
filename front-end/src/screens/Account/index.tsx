@@ -70,11 +70,17 @@ const Account = () => {
             control={control}
             render={({ field: { onChange, onBlur, value } }) => (
               <NameInput
-                placeholder={userData.name ? userData.name : userData.user.name}
+                placeholder="Name"
                 placeholderTextColor="#9d9d9d"
                 onBlur={onBlur}
                 onChangeText={onChange}
-                value={value}
+                value={
+                  value
+                    ? value
+                    : userData.name
+                    ? userData.name
+                    : userData.user.name
+                }
               />
             )}
             name="name"
@@ -84,13 +90,17 @@ const Account = () => {
             control={control}
             render={({ field: { onChange, onBlur, value } }) => (
               <EmailInput
-                placeholder={
-                  userData.email ? userData.email : userData.user.email
-                }
+                placeholder="Email"
                 placeholderTextColor="#9d9d9d"
                 onBlur={onBlur}
                 onChangeText={onChange}
-                value={value}
+                value={
+                  value
+                    ? value
+                    : userData.email
+                    ? userData.email
+                    : userData.user.email
+                }
               />
             )}
             name="email"
