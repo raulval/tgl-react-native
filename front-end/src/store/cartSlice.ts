@@ -13,10 +13,13 @@ export const slice = createSlice({
     setCart(state, { payload }) {
       return { ...state, cartData: payload };
     },
+    logoutCart(state) {
+      return { ...state, cartData: [] };
+    },
   },
 });
 
-export const { setCart } = slice.actions;
+export const { setCart, logoutCart } = slice.actions;
 
 export const selectCart = (state: { cart: CartState }) => state.cart;
 

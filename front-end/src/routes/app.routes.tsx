@@ -15,6 +15,7 @@ import NewPassword from "screens/NewPassword";
 import Reset from "screens/Reset";
 import SignUp from "screens/SignUp";
 import { NavReset } from "shared/interfaces";
+import { logoutCart } from "store/cartSlice";
 import { logout } from "store/userSlice";
 import Theme from "styles/theme";
 
@@ -85,6 +86,7 @@ export function AppBets() {
               routes: [{ name: "AppAuth" }],
             });
             dispatch(logout());
+            dispatch(logoutCart());
           });
           return <AppAuth />;
         }}
