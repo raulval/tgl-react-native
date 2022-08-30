@@ -5,7 +5,7 @@ interface ColorProps {
 }
 
 export const BetsContainer = styled.View`
-  width: 100%;
+  width: 95%;
   flex-direction: row;
   margin-bottom: 35px;
   margin-left: 17px;
@@ -43,12 +43,10 @@ export const BetNumbers = styled.Text`
   font-size: 15px;
   color: #868686;
   margin-bottom: 6px;
-
-  /* overflow-wrap: break-word; */
-  /* min-height: min-content; */
 `;
 
 export const TypePriceWrapper = styled.View`
+  flex-direction: row;
   margin-top: 15px;
 `;
 

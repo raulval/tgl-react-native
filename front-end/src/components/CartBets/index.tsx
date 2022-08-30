@@ -34,7 +34,9 @@ const CartBets = (props: BetsProps) => {
       </DeleteBetContainer>
       <Separator color={props.data.color} />
       <BetsWrapper>
-        <BetNumbers>{props.data.numbers.toString()}</BetNumbers>
+        <BetNumbers>
+          {props.data.numbers.toString().split(",").join(", ")}
+        </BetNumbers>
         <TypePriceWrapper>
           <BetGameType color={props.data.color}>{props.data.type}</BetGameType>
           <BetPrice>R$ {currencyFormat(props.data.price)}</BetPrice>

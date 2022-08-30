@@ -32,7 +32,9 @@ const Bets = (props: BetsProps) => {
     <BetsContainer>
       <Separator color={props.data.type.color} />
       <BetsWrapper>
-        <BetNumbers>{props.data.choosen_numbers}</BetNumbers>
+        <BetNumbers>
+          {props.data.choosen_numbers.split(",").join(", ")}
+        </BetNumbers>
         <BetDateAndPrice>
           {moment(props.data.created_at).format("DD/MM/YYYY")} - (R${" "}
           {currencyFormat(props.data.price)})
