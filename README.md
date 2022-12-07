@@ -1,4 +1,4 @@
-# TGL React
+# TGL React Native
 
 This project was created for [LabLuby's](https://luby.com.br/labluby/) React Native module
 
